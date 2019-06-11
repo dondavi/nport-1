@@ -19,7 +19,7 @@ phases:
   pre_build:
     commands:
       # - npm run test
-      - npm run e2e
+      # - npm run e2e
   build:
     commands:
       - npm run build
