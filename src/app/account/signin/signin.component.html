@@ -4,7 +4,7 @@
       <div fxFlex.gt-xs="50" fxFlex="100" class="bg-image bg-image-signin">
         <div fxLayout="row" fxLayoutAlign="space-evenly center" class="h-100 py-3">
           <div class="text-xs-center pb-1 mat-text-white">
-            <div style="width: 100px;height: 20px;">
+            <div style="width: 100px; height:20px;">
               <svg class="logo" preserveAspectRatio="xMidYMid meet" width="180" height="40" viewBox="0 0 180 40">
                 <use xlink:href="#logo" />
               </svg>
@@ -21,17 +21,17 @@
             <div fxLayout="column" fxLayoutAlign="space-around">
               <div class="pb-1">
                 <mat-form-field style="width: 100%">
-                  <input matInput placeholder="Username" formControl="uname">
+                    <input matInput placeholder="Username" [formControl]="form.controls['uname']">
+                </mat-form-field>
                   <mat-icon matSuffix>person</mat-icon>
 
-                </mat-form-field>
               </div>
               <div class="pb-1">
                 <mat-form-field style="width: 100%">
                   <input matInput type="password" placeholder="Password" [formControl]="form.controls['password']">
                   <mat-icon matSuffix>lock</mat-icon>
-                <small *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched"
-                  class="mat-text-warn">Password is required.</small>
+                  <small *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched"
+                         class="mat-text-warn">Password is required.</small>
                 </mat-form-field>
               </div>
               <div class="pb-1">

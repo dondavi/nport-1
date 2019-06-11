@@ -18,6 +18,8 @@ import {
   PerfectScrollbarDirective
 } from 'ngx-perfect-scrollbar';
 
+import {AuthService} from "../../shared/services";
+
 const SMALL_WIDTH_BREAKPOINT = 960;
 
 @Component({
@@ -47,8 +49,10 @@ export class AdminLayoutComponent implements OnInit, OnDestroy {
   directiveScroll: PerfectScrollbarDirective;
 
   public config: PerfectScrollbarConfigInterface = {};
+  public UserDetails: any;
 
   constructor(
+    public authService: AuthService,
     private _element: ElementRef,
     private router: Router,
     private route: ActivatedRoute,
@@ -76,8 +80,14 @@ export class AdminLayoutComponent implements OnInit, OnDestroy {
         this.runOnRouteChange();
       });
     this.runOnRouteChange();
+    this.getUserDetails();
+
   }
 
+
+  public getUserDetails(): void {
+    this.UserDetails = this.authService.UserDetails;
+  }
   ngOnDestroy(): void {
     this._router.unsubscribe();
   }

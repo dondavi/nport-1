@@ -16,9 +16,7 @@ import {
 export class HeaderComponent {
   @Output()
   toggleSidenav = new EventEmitter<void>();
-
   public config: PerfectScrollbarConfigInterface = {};
-
   constructor(
     public notificationService: NotificationService,
     iconRegistry: MatIconRegistry,
