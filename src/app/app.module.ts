@@ -3,8 +3,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-
 // Angular Material
 import {
   MatSidenavModule,
@@ -16,7 +16,8 @@ import {
   MatTooltipModule,
   MatListModule,
   MatProgressBarModule,
-  MatSelectModule
+  MatSelectModule,
+  MatCardModule,
 } from '@angular/material';
 // Angular Flexlayout
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -47,10 +48,9 @@ import {
 
 import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
+import {AuthGuard, AuthService} from "./shared/services";
+import {SigninComponent} from "./account/signin/signin.component";
 
-import { AuthService, AuthGuard } from "./shared/services";
-import {DashboardComponent} from "./dashboard/dashboard.component";
-import { SigninComponent} from "./account/signin/signin.component";
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -72,7 +72,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AccordionAnchorDirective,
     AccordionLinkDirective,
     AccordionDirective,
-    DashboardComponent,
     SigninComponent
   ],
   imports: [
@@ -80,6 +79,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     BrowserAnimationsModule,
     RouterModule.forRoot(AppRoutes),
     FormsModule,
+    ReactiveFormsModule, // Angular Reactive Forms
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -98,6 +98,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MatListModule,
     MatSelectModule,
     MatProgressBarModule,
+    MatCardModule,
     FlexLayoutModule,
     LoadingBarRouterModule,
     LoadingBarModule.forRoot(),
@@ -112,8 +113,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     },
     AuthService,
-    AuthGuard
-  ],
+    AuthGuard,
+],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -21,19 +21,18 @@
             <div fxLayout="column" fxLayoutAlign="space-around">
               <div class="pb-1">
                 <mat-form-field style="width: 100%">
-                  <input matInput placeholder="Username" [formControl]="form.controls['uname']">
+                  <input matInput placeholder="Username" formControl="uname">
                   <mat-icon matSuffix>person</mat-icon>
+
                 </mat-form-field>
-                <small *ngIf="form.controls['uname'].hasError('required') && form.controls['uname'].touched" class="mat-text-warn">Username
-                  is required.</small>
               </div>
               <div class="pb-1">
                 <mat-form-field style="width: 100%">
                   <input matInput type="password" placeholder="Password" [formControl]="form.controls['password']">
                   <mat-icon matSuffix>lock</mat-icon>
-                </mat-form-field>
                 <small *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched"
-                       class="mat-text-warn">Password is required.</small>
+                  class="mat-text-warn">Password is required.</small>
+                </mat-form-field>
               </div>
               <div class="pb-1">
                 <mat-checkbox>Stay logged in</mat-checkbox>
