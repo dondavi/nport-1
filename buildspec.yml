@@ -22,8 +22,8 @@ phases:
       # - npm run e2e
   build:
     commands:
-      - npm run build
-
+      # - npm run build
+      - ng build --production --outputHashing=all
   post_build:
     commands:
       - aws s3 sync dist/ s3://nport-1.ddvi.io --delete
