@@ -13,6 +13,7 @@
   "private": true,
   "dependencies": {
     "@agm/core": "1.0.0-beta.3",
+    "@angular/cli": "6.2.1",
     "@angular/animations": "6.1.7",
     "@angular/cdk": "6.4.7",
     "@angular/common": "6.1.7",
