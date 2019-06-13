@@ -20,6 +20,7 @@ phases:
     commands:
       # - npm run test
       # - npm run e2e
+      - npm install @angular/core@6.1.7
       - npm install @angular/cli@6.2.1
 
   build:
