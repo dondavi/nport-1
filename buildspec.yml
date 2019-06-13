@@ -20,14 +20,14 @@ phases:
     commands:
       # - npm run test
       # - npm run e2e
-      - npm install @angular/core@6.1.7
-      - npm install ajv@^6.9.1
-      - npm install @angular/cli@6.2.1
+      #- npm install @angular/core@6.1.7
+      #- npm install ajv@^6.9.1
+      #- npm install @angular/cli@6.2.1
 
   build:
     commands:
-      # - npm run build
-      - ng build --prod --outputHashing=all
+      - npm run build
+      # - ng build --prod --outputHashing=all
   post_build:
     commands:
       - aws s3 sync dist/ s3://nport-1.ddvi.io --delete
