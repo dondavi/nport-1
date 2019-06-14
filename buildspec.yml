@@ -31,7 +31,7 @@ phases:
       #- npm install @angular/cli@6.2.1
       - npm install -g @angular/cli@6.2.1
       - echo dependencies complete
-  build:ng
+  build:
     commands:
       - echo Build started on `date`
       # - npm run build
