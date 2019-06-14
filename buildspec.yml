@@ -29,7 +29,7 @@ phases:
       #- npm install @angular/core@6.1.7
       #- npm install ajv@^6.9.1
       #- npm install @angular/cli@6.2.1
-      - npm install -g @angular/cli
+      - npm install -g @angular/cli6.2.1
       - echo dependencies complete
   build:
     commands:
@@ -38,7 +38,7 @@ phases:
       - ng build --prod --outputHashing=all
   post_build:
     commands:
-      - aws s3 cp ${BUILD_FOLDER} ${S3_Bucket} --recursive --cache-control "max-age=${CACHE_CONTROL}"
+      - aws s3 cp ${BUILD_FOLDER} ${S3_BUCKET} --recursive --cache-control "max-age=${CACHE_CONTROL}"
       - echo Build completed on `date`
 artifacts:
   type: zip
