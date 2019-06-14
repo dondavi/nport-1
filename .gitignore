@@ -3,6 +3,7 @@
 # compiled output
 /dist
 /tmp
+/public
 
 # dependencies
 /node_modules
@@ -35,6 +36,9 @@ testem.log
 # e2e
 /e2e/*.js
 /e2e/*.map
+
+# environment info
+/src/environments/*
 
 #System Files
 .DS_Store

@@ -1,4 +1,9 @@
 version: 0.2
+env:
+  variables:
+    CACHE_CONTROL: "86400"
+    S3_BUCKET : "s3://nport-1.ddvi.io"
+    BUILD_FOLDER : "dist/"
 
 phases:
   install:
@@ -6,6 +11,7 @@ phases:
       nodejs: 8
     commands:
       # Get Chrome Information
+      - echo Installing source NPM dependencies
       - curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
       - echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
       - apt-get -y update
@@ -23,14 +29,16 @@ phases:
       #- npm install @angular/core@6.1.7
       #- npm install ajv@^6.9.1
       #- npm install @angular/cli@6.2.1
-
+      - npm install -g @angular/cli
+      - echo dependencies complete
   build:
     commands:
-      - npm run build
-      # - ng build --prod --outputHashing=all
+      - echo Build started on `date`
+      # - npm run build
+      - ng build --prod --outputHashing=all
   post_build:
     commands:
-      - aws s3 sync dist/ s3://nport-1.ddvi.io --delete
+      - aws s3 cp ${BUILD_FOLDER} ${S3_Bucket} --recursive --cache-control "max-age=${CACHE_CONTROL}"
       - echo Build completed on `date`
 artifacts:
   type: zip
