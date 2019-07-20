@@ -104,7 +104,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     LoadingBarRouterModule,
     LoadingBarModule.forRoot(),
     AgmCoreModule.forRoot({
-      apiKey: 'YOURAPIKEY'
+      apiKey: 'AIzaSyArXzC6Cvak74cUNsmDAatU-y_7RdpT2r8'
     }),
     PerfectScrollbarModule,
     MatInputModule
