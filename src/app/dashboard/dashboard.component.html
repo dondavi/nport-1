@@ -1,1 +1,275 @@
-<p>Dashboard</p>
+<div fxLayout="row wrap">
+  <div fxFlex.gt-sm="16.66" fxFlex.gt-xs="33.33" fxFlex="50">
+    <mat-card class="card-widget">
+      <div mat-card-widget>
+        <div class="w-100">
+          <h2 mat-card-widget-title>
+            <span>103</span>&nbsp;
+            <span class="text-xs">
+              <span class="mat-text-primary">&#9650;</span> +34%
+            </span>
+          </h2>
+          <p class="text-md">Campaigns<p>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <div fxFlex.gt-sm="16.66" fxFlex.gt-xs="33.33" fxFlex="50">
+    <mat-card class="card-widget mat-blue-grey">
+      <div mat-card-widget>
+        <div class="w-100">
+          <h2 mat-card-widget-title>
+            <span>230</span>&nbsp;
+            <span class="text-xs">
+              <span class="mat-text-accent">&#9650;</span> +46%
+            </span>
+          </h2>
+          <p class="text-md">Customers<p>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <div fxFlex.gt-sm="16.66" fxFlex.gt-xs="33.33" fxFlex="50">
+    <mat-card class="card-widget mat-blue">
+      <div mat-card-widget>
+        <div class="w-100">
+          <h2 mat-card-widget-title>
+            <span>323</span>&nbsp;
+            <span class="text-xs">
+              <span class="mat-text-white">&#9660;</span> +20%
+            </span>
+          </h2>
+          <p class="text-md">Queries<p>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <div fxFlex.gt-sm="16.66" fxFlex.gt-xs="33.33" fxFlex="50">
+    <mat-card class="card-widget mat-pink">
+      <div mat-card-widget>
+        <div class="w-100">
+          <h2 mat-card-widget-title>
+            <span>870</span>&nbsp;
+            <span class="text-xs">
+              <span class="mat-text-accent">&#9650;</span> +20%
+            </span>
+          </h2>
+          <p class="text-md">Opens<p>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <div fxFlex.gt-sm="16.66" fxFlex.gt-xs="33.33" fxFlex="50">
+    <mat-card class="card-widget mat-indigo">
+      <div mat-card-widget>
+        <div class="w-100">
+          <h2 mat-card-widget-title>
+            <span>768</span>&nbsp;
+            <span class="text-xs">
+              <span class="mat-text-white">&#9660;</span> +20%
+            </span>
+          </h2>
+          <p class="text-md">Replies<p>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <div fxFlex.gt-sm="16.66" fxFlex.gt-xs="33.33" fxFlex="50">
+    <mat-card class="card-widget mat-purple">
+      <div mat-card-widget>
+        <div class="w-100">
+          <h2 mat-card-widget-title>
+            <span>$645</span>&nbsp;
+            <span class="text-xs">
+              <span class="mat-text-accent">&#9650;</span> +20%
+            </span>
+          </h2>
+          <p class="text-md">Sales<p>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+<mat-card>
+  <div fxLayout="row wrap">
+    <div fxFlex.gt-sm="85" fxFlex="100">
+      <mat-card-title>Analytics</mat-card-title>
+      <mat-card-subtitle fxLayout="row" fxLayoutAlign="start center">
+        30 Day Average &nbsp; <span class="font-weight-bold mat-text-warn">+458,90</span>
+      </mat-card-subtitle>
+      <div class="py-1 w-100">
+        <ngx-charts-area-chart class="chart-container" [scheme]="colorScheme" [schemeType]="schemeType" [results]="dateData"
+                               [legend]="showLegend" (legendLabelClick)="onLegendLabelClick($event)" [gradient]="gradient" [xAxis]="showXAxis"
+                               [yAxis]="showYAxis" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel"
+                               [yAxisLabel]="yAxisLabel" [autoScale]="autoScale" [timeline]="timeline" [showGridLines]="showGridLines"
+                               [roundDomains]="roundDomains" [curve]="curve" [tooltipDisabled]="tooltipDisabled" (select)="select($event)">
+        </ngx-charts-area-chart>
+      </div>
+    </div>
+    <div class="mat-teal-100" fxFlex fxLayoutAlign="start center">
+      <div fxLayout="column" fxLayout.sm="row" fxLayout.xs="row" class="w-100">
+        <div fxFlex class="pa-1">
+          <p class="mb-0 text-md">Campaigns</p>
+          <h1 class="mt-0 mb-0">103 <span class="text-xs mat-text-primary">&#9650; +0.45%</span></h1>
+        </div>
+        <div fxFlex class="pa-1">
+          <p class="mb-0 text-md">Customers</p>
+          <h1 class="mt-0 mb-0">230 <span class="text-xs mat-text-warn">&#9660; -8.95%</span></h1>
+        </div>
+        <div fxFlex class="pa-1">
+          <p class="mb-0 text-md">Queries</p>
+          <h1 class="mt-0 mb-0">323 <span class="text-xs mat-text-warn">&#9660; -3.4%</span></h1>
+        </div>
+        <div fxFlex class="pa-1">
+          <p class="mb-0 text-md">Opens</p>
+          <h1 class="mt-0 mb-0">870 <span class="text-xs mat-text-primary">&#9650; +4.90%</span></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>
+
+<div fxLayout="row wrap">
+  <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="50" fxFlex="100">
+    <mat-card>
+      <div class="small-chart mat-green-300 py-2">
+        <div>
+          <ngx-charts-line-chart class="chart-container" [scheme]="colorSchemeSmallChart" [schemeType]="schemeType"
+                                 [results]="dateDataSmallChartRange" [legend]="showLegend" (legendLabelClick)="onLegendLabelClick($event)"
+                                 [gradient]="gradient" [xAxis]="false" [yAxis]="showYAxis" [showXAxisLabel]="showXAxisLabel"
+                                 [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [autoScale]="autoScale"
+                                 [timeline]="timeline" [showGridLines]="showGridLines" [curve]="curveSmallChart" [rangeFillOpacity]="rangeFillOpacity"
+                                 [roundDomains]="true" [tooltipDisabled]="true" (select)="select($event)">
+          </ngx-charts-line-chart>
+        </div>
+      </div>
+      <mat-card-footer class="w-100 ma-0 text-xs-center">
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="pa-xs">
+          <div fxFlex>
+            <div class="text-md mat-text-muted">Daily Sales</div>
+            <h3 class="my-0">$ 89.34</h3>
+          </div>
+          <div fxFlex>
+            <div class="text-md mat-text-muted">Weekly Sales</div>
+            <h3 class="my-0">$ 498.00</h3>
+          </div>
+          <div fxFlex>
+            <div class="text-md mat-text-muted">Monthly Sales</div>
+            <h3 class="my-0">$ 34,903</h3>
+          </div>
+        </div>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+  <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="50" fxFlex="100">
+    <mat-card>
+      <div class="small-chart mat-brown-300 py-2">
+        <div>
+          <ngx-charts-bar-vertical class="chart-container" [scheme]="colorSchemeSmallChart" [schemeType]="schemeType"
+                                   [results]="single" [gradient]="false" [xAxis]="false" [yAxis]="showYAxis" [legend]="showLegend"
+                                   [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [tooltipDisabled]="tooltipDisabled"
+                                   [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [showGridLines]="showGridLines" [barPadding]="barPadding"
+                                   [roundEdges]="roundEdges" [roundDomains]="roundDomains" (select)="select($event)" (legendLabelClick)="onLegendLabelClick($event)">
+          </ngx-charts-bar-vertical>
+        </div>
+      </div>
+      <mat-card-footer class="w-100 ma-0 text-xs-center">
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="pa-xs">
+          <div fxFlex>
+            <div class="text-md mat-text-muted">Daily Sales</div>
+            <h3 class="my-0">$ 89.34</h3>
+          </div>
+          <div fxFlex>
+            <div class="text-md mat-text-muted">Weekly Sales</div>
+            <h3 class="my-0">$ 498.00</h3>
+          </div>
+          <div fxFlex>
+            <div class="text-md mat-text-muted">Monthly Sales</div>
+            <h3 class="my-0">$ 34,903</h3>
+          </div>
+        </div>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+  <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+      <div class="small-chart mat-blue-grey-300 py-2">
+        <div>
+          <ngx-charts-pie-chart class="chart-container" [scheme]="colorScheme" [results]="single" [legend]="showLegend"
+                                [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut" [arcWidth]="arcWidth"
+                                (legendLabelClick)="onLegendLabelClick($event)" [gradient]="gradient" [tooltipDisabled]="tooltipDisabled"
+                                (select)="select($event)">
+          </ngx-charts-pie-chart>
+        </div>
+      </div>
+      <mat-card-footer class="w-100 ma-0 text-xs-center">
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="pa-xs">
+          <div fxFlex>
+            <div class="text-md mat-text-muted">Daily Sales</div>
+            <h3 class="my-0">$ 89.34</h3>
+          </div>
+          <div fxFlex>
+            <div class="text-md mat-text-muted">Weekly Sales</div>
+            <h3 class="my-0">$ 498.00</h3>
+          </div>
+          <div fxFlex>
+            <div class="text-md mat-text-muted">Monthly Sales</div>
+            <h3 class="my-0">$ 34,903</h3>
+          </div>
+        </div>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>
+
+<div fxLayout="row wrap">
+  <div fxFlex.gt-sm="66.66" fxFlex.gt-xs="50" fxFlex="100">
+    <mat-card class="overflow-hidden">
+      <div fxFlex>
+        <agm-map mat-card-image [latitude]="lat" [longitude]="lng" [zoom]="zoom" [zoomControl]="false"></agm-map>
+      </div>
+      <div fxFlex>
+        <mat-table #table [dataSource]="dataSource">
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <mat-header-cell *matHeaderCellDef> # </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="country">
+            <mat-header-cell *matHeaderCellDef> Country </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.country}} </mat-cell>
+          </ng-container>
+
+          <!-- Value Column -->
+          <ng-container matColumnDef="value">
+            <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.value}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+    </mat-card>
+  </div>
+  <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="50" fxFlex="100">
+    <mat-card>
+      <mat-card-title>Newsfeed</mat-card-title>
+      <mat-card-subtitle>Stories posted today</mat-card-subtitle>
+      <hr>
+      <mat-list>
+        <ng-template let-item let-last="last" ngFor [ngForOf]="messages">
+          <mat-list-item>
+            <img mat-list-avatar src="{{item.photo}}" alt="">
+            <h3 matLine> {{item.from}} </h3>
+            <p matLine class="mat-text-muted"> {{item.subject}} - {{item.message}} </p>
+          </mat-list-item>
+        </ng-template>
+      </mat-list>
+    </mat-card>
+  </div>
+</div>
