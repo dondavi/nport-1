@@ -38,7 +38,7 @@ testem.log
 /e2e/*.map
 
 # environment info
-/src/environments/*
+# /src/environments/*
 
 #System Files
 .DS_Store
