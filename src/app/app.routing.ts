@@ -25,6 +25,10 @@ export const AppRoutes: Routes = [
       {
         path: 'error',
         loadChildren: './error/error.module#ErrorModule'
+      },
+      {
+        path: 'portal',
+        loadChildren: './portal/portal.module#PortalModule'
       }
       ]
   },

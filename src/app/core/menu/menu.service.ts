@@ -36,8 +36,18 @@ const MENUITEMS = [
   },
   {
     type: 'title',
-    name: 'PAGES'
+    name: 'APPLICATIONS'
   },
+  {
+    state: 'portal',
+    name: 'Portal',
+    type: 'sub',
+    icon: 'equilizer',
+    children: [
+      { state: 'main', name: 'MAIN' }
+      ]
+  },
+  /*
   {
     state: 'account',
     name: 'ACCOUNT',
@@ -50,6 +60,8 @@ const MENUITEMS = [
       { state: 'lockscreen', name: 'LOCKSCREEN' }
     ]
   },
+   */
+  /*
   {
     state: 'error',
     name: 'ERROR',
@@ -57,6 +69,7 @@ const MENUITEMS = [
     icon: 'error',
     children: [{ state: '404', name: '404' }, { state: 'error', name: 'ERROR' }]
   },
+   */
   {
     type: 'divider'
   },
